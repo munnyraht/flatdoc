@@ -55,7 +55,7 @@ Endpoint for Tixy
 ```
 ## get_event_by_email (Retreive event)
 
-> Endpoint: get_events_by_email.py
+> Endpoint: get_events_by_email
 
 > Payload
 
@@ -69,32 +69,32 @@ Endpoint for Tixy
 
 ```json
 
-{
-    "event1": {"event_id": 1, 
-                "event_name": "event_name", 
-                "event_tag": "event_tag",
-                "start_date": "2019-12-02T12:30:30.001Z", 
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 12,
-                "revenue": 36000, 
-                "status": "status"},
-    "event2": {"event_id": 2, 
-                "event_name": "Slay Festival", 
-                "event_tag": "Slay", 
-                "start_date": "2019-01-24T12:30:30.001Z",
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 62,
-                "revenue": 186000, 
-                "status": "status"},
+[ 
+  { "event_id": 1, 
+    "event_name": "event_name", 
+    "event_tag": "event_tag",
+    "start_date": "2019-12-02T12:30:30.001Z", 
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 12,
+    "revenue": 36000, 
+    "status": "status"},
+   {"event_id": 2, 
+    "event_name": "Slay Festival", 
+    "event_tag": "Slay", 
+    "start_date": "2019-01-24T12:30:30.001Z",
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 62,
+    "revenue": 186000, 
+    "status": "status"}
 
-}
+]
 ```
 
 ## get_events_by_status (Retreive event)
 
-> Endpoint: get_events_by_status.py
+> Endpoint: get_events_by_status
 
 > Payload
 
@@ -108,32 +108,33 @@ Endpoint for Tixy
 
 ```json
 
-{
-    "event1": {"event_id": 1, 
-                "event_name": "event_name", 
-                "event_tag": "event_tag",
-                "start_date": "2019-12-02T12:30:30.001Z", 
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 12,
-                "revenue": 36000, 
-                "status": "status"},
-    "event2": {"event_id": 2, 
-                "event_name": "Slay Festival", 
-                "event_tag": "Slay", 
-                "start_date": "2019-01-24T12:30:30.001Z",
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 62,
-                "revenue": 186000, 
-                "status": "status"},
+[
+   {"event_id": 1, 
+    "event_name": "event_name", 
+    "event_tag": "event_tag",
+    "start_date": "2019-12-02T12:30:30.001Z", 
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 12,
+    "revenue": 36000, 
+    "status": "status"},
+    
+   {"event_id": 2, 
+    "event_name": "Slay Festival", 
+    "event_tag": "Slay", 
+    "start_date": "2019-01-24T12:30:30.001Z",
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 62,
+    "revenue": 186000, 
+    "status": "status"}
 
-}
+]
 ```
 
 ## get_events_by_tag (Retreive event)
 
-> Endpoint: get_events_by_tag.py
+> Endpoint: get_events_by_tag
 
 > Payload
 
@@ -147,32 +148,32 @@ Endpoint for Tixy
 
 ```json
 
-{
-    "event1": {"event_id": 1, 
-                "event_name": "event_name", 
-                "event_tag": "event_tag",
-                "start_date": "2019-12-02T12:30:30.001Z", 
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 12,
-                "revenue": 36000, 
-                "status": "status"},
-    "event2": {"event_id": 2, 
-                "event_name": "Slay Festival", 
-                "event_tag": "Slay", 
-                "start_date": "2019-01-24T12:30:30.001Z",
-                "end_date": "2019-05-04T12:30:30.001Z", 
-                "username": "username", 
-                "no_tickets_sold": 62,
-                "revenue": 186000, 
-                "status": "status"},
+[  {"event_id": 1, 
+    "event_name": "event_name", 
+    "event_tag": "event_tag",
+    "start_date": "2019-12-02T12:30:30.001Z", 
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 12,
+    "revenue": 36000, 
+    "status": "status"},
 
-}
+   {"event_id": 2, 
+    "event_name": "Slay Festival", 
+    "event_tag": "Slay", 
+    "start_date": "2019-01-24T12:30:30.001Z",
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 62,
+    "revenue": 186000, 
+    "status": "status"}
+
+]
 ```
 
 ## get_no_of_sold_tickets (Retreive the number of ticket sold over a specified period of time)
 
-> Endpoint: get_no_of_sold_tickets.py
+> Endpoint: get_no_of_sold_tickets
 
 > Payload
 
@@ -191,7 +192,7 @@ Endpoint for Tixy
 
 ## get_total_revenue (Retreive the amount of revenue made over a specified period of time)
 
-> Endpoint: get_no_of_sold_tickets.py
+> Endpoint: get_no_of_sold_tickets
 
 > Payload
 
@@ -210,7 +211,7 @@ Endpoint for Tixy
 
 ## get_recent_purchases_by_email (Retreive top 10 tickets purchase records)
 
-> Endpoint: get_recent_purchases_by_email.py
+> Endpoint: get_recent_purchases_by_email
 
 > Payload
 
@@ -225,17 +226,17 @@ Endpoint for Tixy
 ```json
 
 
-{
-    "event1": 
-        {"ticket_buyer_name": "David", 
-        "amount": 24000, 
-        "event_name": "Teker Expo", 
-        "purchase_date": "2019-05-04T12:30:30.001Z"}, 
-    "event2": 
-        {"ticket_buyer_name": "David",
-         "amount": 6000,
-         "event_name": "Teker Expo", 
-         "purchase_date": "2019-05-04T12:30:30.001Z"} 
+[
+    {"ticket_buyer_name": "ticket_buyer_name", 
+    "amount":"amount", 
+    "event_name": "event_name", 
+    "purchase_date": "2019-05-04T12:30:30.001Z"}, 
+
+    {"ticket_buyer_name": "ticket_buyer_name",
+     "amount": "amount",
+     "event_name": "event_name", 
+     "purchase_date": "2019-05-04T12:30:30.001Z"} 
+]
 
 ```
 
@@ -271,7 +272,7 @@ Endpoint for Tixy
 
 ```
 
-## edit_user_info (Retreive top 10 tickets purchase records)
+## edit_user_info 
 
 > Endpoint: create_event.py
 
