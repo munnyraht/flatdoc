@@ -242,7 +242,7 @@ Endpoint for Tixy
 
 ## create_event (create a new event)
 
-> Endpoint: create_event.py
+> Endpoint: create_event
 
 > Payload
 
@@ -274,7 +274,7 @@ Endpoint for Tixy
 
 ## edit_user_info 
 
-> Endpoint: create_event.py
+> Endpoint: edit_user_info 
 
 > Payload
 
@@ -294,7 +294,8 @@ Endpoint for Tixy
 > Result
 
 ```json
-{   "event_ref":"event_ref",
+{   
+
    "event_name":"event_name",
    "event_tag":"event_tag",
    "description":"description",
@@ -304,6 +305,46 @@ Endpoint for Tixy
    "end_date":"end_date",
    "twitter_link":"twitter_link",
     "facebook_link":"facebook_link"   
+
+   } 
+
+```
+
+
+## get_event_summary
+
+> Endpoint: get_event_summary
+
+> Payload
+
+```json
+{ 
+
+  "username": "username",
+  "event_name": "event_name",
+   "period": "2019-09-12T12:30:30.001Z"
+
+}
+```
+
+> Result
+
+```json
+{ 
+
+"Total_orders": 0, 
+"Total_ticket_sold": 0,
+"Total_revenue": 0,
+"revenue_ticketsold_details": [{"date": "date", "amount": 0,"no_of_tickets": 0},
+                               {"date": "date", "amount": 0, "no_of_tickets": 0},
+                               {"date": "date", "amount": 0, "no_of_tickets": 0},
+                               {"date": "date", "amount": 0, "no_of_tickets": 0}, 
+                               {"date": "date", "amount": 0, "no_of_tickets": 0}
+                              ], 
+"registration_details": [{"Male": 0, "Female": 0, "Other": 0},
+                         {"under_20": 0, "21-30": 0, "31+": 0},
+                         {"Testing": 0, "VIP": 0, "Table": 0, "Cabana": 0}
+                        ]
 
    } 
 
