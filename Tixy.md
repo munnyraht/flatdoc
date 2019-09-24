@@ -349,3 +349,51 @@ Endpoint for Tixy
    } 
 
 ```
+
+## get_event_ticket_details
+
+> Endpoint: get_event_ticket_details
+
+> Payload
+
+```json
+{ 
+
+  "username": "username",
+  "event_name": "event_name"
+
+}
+```
+
+> Result
+
+```json
+
+[
+   {
+    "ticket_name": "Regular", 
+    "amount": 2000, 
+    "sales_start_date": "2019-09-02T12:30:30.001Z", 
+    "sales_end_date": "2019-11-02T12:30:30.001Z", 
+    "no_of_ticket_sold": 2,
+    "Quantity_available": 98
+    }, 
+
+    {
+      "ticket_name": "VIP",
+      "amount": 10000, 
+      "sales_start_date": "2019-09-02T12:30:30.001Z", 
+      "sales_end_date": "2019-11-02T12:30:30.001Z", 
+      "no_of_ticket_sold": 3,
+      "Quantity_available": 97
+    },
+
+    {
+      "ticket_name": "Table",
+      "amount": 85000,
+      "sales_start_date": "2019-09-02T12:30:30.001Z", 
+      "sales_end_date": "2019-12-02T12:30:30.001Z",
+      "no_of_ticket_sold": 2,
+      "Quantity_available": 98
+    }
+```
