@@ -397,3 +397,36 @@ Endpoint for Tixy
       "Quantity_available": 98
     }
 ```
+
+## create_ticket 
+
+> Endpoint: create_ticket
+
+> Payload
+
+```json
+{
+    "username": "username",
+     "event_name": "event_name", 
+     "ticket_name": "ticket_name", 
+     "price": 700000,
+      "description": "description", 
+      "Quantity Available": "Quantity Available"
+
+}
+```
+
+> Result
+
+```json
+  {
+    "username": "Acme", 
+    "event_name": "Tekker Expo", 
+    "ticket_name": "Table", 
+    "price": 700000, 
+    "description": "sit next to vip on in the front row", 
+    "Quantity Available": 1000
+
+  }
+
+```
