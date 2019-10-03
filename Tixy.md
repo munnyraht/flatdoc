@@ -70,7 +70,8 @@ Endpoint for Tixy
 ```json
 
 [ 
-  { "event_id": 1, 
+  { 
+    "event_id": 1, 
     "event_name": "event_name", 
     "event_tag": "event_tag",
     "start_date": "2019-12-02T12:30:30.001Z", 
@@ -78,8 +79,10 @@ Endpoint for Tixy
     "username": "username", 
     "no_tickets_sold": 12,
     "revenue": 36000, 
-    "status": "status"},
-   {"event_id": 2, 
+    "status": "status"
+  },
+  {
+    "event_id": 2, 
     "event_name": "Slay Festival", 
     "event_tag": "Slay", 
     "start_date": "2019-01-24T12:30:30.001Z",
@@ -87,7 +90,51 @@ Endpoint for Tixy
     "username": "username", 
     "no_tickets_sold": 62,
     "revenue": 186000, 
-    "status": "status"}
+    "status": "status"
+  }
+
+]
+```
+
+## get_event_by_username (Retreive event)
+
+> Endpoint: get_events_by_username
+
+> Payload
+
+```json
+{
+    "username": "username"
+}
+```
+
+> Result
+
+```json
+
+[ 
+  { 
+    "event_id": 1, 
+    "event_name": "event_name", 
+    "event_tag": "event_tag",
+    "start_date": "2019-12-02T12:30:30.001Z", 
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 12,
+    "revenue": 36000, 
+    "status": "status"
+  },
+  {
+    "event_id": 2, 
+    "event_name": "Slay Festival", 
+    "event_tag": "Slay", 
+    "start_date": "2019-01-24T12:30:30.001Z",
+    "end_date": "2019-05-04T12:30:30.001Z", 
+    "username": "username", 
+    "no_tickets_sold": 62,
+    "revenue": 186000, 
+    "status": "status"
+  }
 
 ]
 ```
@@ -238,6 +285,47 @@ Endpoint for Tixy
      "purchase_date": "2019-05-04T12:30:30.001Z"} 
 ]
 
+```
+
+
+
+## get_ticket_purchase_details
+
+> Endpoint: get_ticket_purchase_details
+
+> Payload
+
+```json
+{
+    "ticket_id": "ticket_id",
+}
+```
+
+> Result
+
+```json
+
+[ 
+  { 
+    "name": "name",
+    "email": "email", 
+    "event_tag": "event_tag",
+    "purchase_date": "2019-12-02T12:30:30.001Z",
+    "ticket_id": "ticket_id",
+    "ticket_type": "ticket_type"
+
+  },
+  { 
+    "name": "name",
+    "email": "email", 
+    "event_tag": "event_tag",
+    "purchase_date": "2019-12-02T12:30:30.001Z",
+    "ticket_id": "ticket_id",
+    "ticket_type": "ticket_type"
+
+  }
+
+]
 ```
 
 ## create_event (create a new event)
@@ -428,5 +516,70 @@ Endpoint for Tixy
     "Quantity Available": 1000
 
   }
+
+```
+
+## get_ticket_purchase_details
+
+> Endpoint: get_ticket_purchase_details
+
+> Payload
+
+```json
+{
+    "username": "username",
+    "event_name": "event_name"
+
+}
+```
+
+> Result
+
+```json
+  [
+    { 
+      "ticket_buyer_name": "ticket_buyer_name",
+      "amount":"amount",
+      "no_of_ticket_purchased":"no_of_ticket_purchased",
+      "purchase_date":"purchase_date",
+      "ticket_id":"ticket_id",
+      "email":"email"
+    },
+    { 
+      "ticket_buyer_name": "ticket_buyer_name",
+      "amount":"amount",
+      "no_of_ticket_purchased":"no_of_ticket_purchased",
+      "purchase_date":"purchase_date",
+      "ticket_id":"ticket_id",
+      "email":"email"
+    }
+  ]
+```
+## edit_ticket
+
+> Endpoint: edit_ticket
+
+> Payload
+
+```json
+{
+    "username": "username",
+    "event_name":"event_name",
+    "ticket_name": "ticket_name",
+    "Quantity_available":"Quantity_available",
+    "description":"description",
+    "sales_start_date":"sales_start_date",
+    "sales_end_date" : "sales_end_date",
+    "minimum_tickets_per_order":"minimum_tickets_per_order",
+    "max_tickets_per_order": "max_tickets_per_order"
+
+}
+```
+
+> Result
+
+```json
+ 
+  'Tickets Updates Successfully'
 
 ```
