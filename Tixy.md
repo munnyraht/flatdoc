@@ -218,7 +218,7 @@ Endpoint for Tixy
 ]
 ```
 
-## get_no_of_sold_tickets (Retreive the number of ticket sold over a specified period of time)
+## get_no_of_sold_tickets 
 
 > Endpoint: get_no_of_sold_tickets
 
@@ -237,7 +237,7 @@ Endpoint for Tixy
 {"number_of_tickets_sold": "number_of_tickets_sold"}
 ```
 
-## get_total_revenue (Retreive the amount of revenue made over a specified period of time)
+## get_total_revenue 
 
 > Endpoint: get_no_of_sold_tickets
 
