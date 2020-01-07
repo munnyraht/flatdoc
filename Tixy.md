@@ -45,6 +45,7 @@ Endpoint for Tixy
     "account": {
         "accountRef": "ea7ca901-9217-4a04-9af4-3c6c21ccc3a2",
         "email": "email",
+
         "industry": "industry",
         "organizer": "organizer",
         "website": "website",
@@ -53,15 +54,42 @@ Endpoint for Tixy
 }
 
 ```
-## get_event_by_email (Retreive event)
+## get_accountid
 
-> Endpoint: get_events_by_email
+> Endpoint: get_events
 
-> Payload
+> Payload('status' and 'event_tag' are not required)
 
 ```json
+{ 
+    "idToken": "idToken",
+     "uid":"uid"
+}
+```
+
+> Result
+
+```json
+
 {
-    "email": "email",
+  "account_id": "account_id"
+}
+
+```
+## get_events
+
+> Endpoint: get_events
+
+> Payload('status' and 'event_tag' are not required)
+
+```json
+{ 
+    "idToken": "idToken",
+     "uid":"uid",
+     "accountid": "accountid",
+     "status":"status",
+     "event_tag": "event_tag"
+
 }
 ```
 
@@ -76,35 +104,26 @@ Endpoint for Tixy
     "event_tag": "event_tag",
     "start_date": "start_date", 
     "end_date": "end_date", 
+    "status":"status",
     "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
-  },
-  {
-  "event_id": "event_id", 
-    "event_name": "event_name", 
-    "event_tag": "event_tag",
-    "start_date": "start_date", 
-    "end_date": "end_date", 
-    "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
+    "tickets": "tickets",
+    "revenue": "revenue"
   }
-
 ]
 ```
 
-## get_event_by_username (Retreive event)
+## get_revenue_and_ticketsold
 
-> Endpoint: get_events_by_username
+> Endpoint: get_revenue_and_ticketsold
 
 > Payload
 
 ```json
 {
-    "username": "username"
+    "idToken" : "idToken",
+     "uid": "uid",
+     "accountid": "accountid",
+     "period": "period"
 }
 ```
 
@@ -112,42 +131,24 @@ Endpoint for Tixy
 
 ```json
 
-[ 
-  { 
-    "event_id": "event_id", 
-    "event_name": "event_name", 
-    "event_tag": "event_tag",
-    "start_date": "2019-12-02T12:30:30.001Z", 
-    "end_date": "2019-05-04T12:30:30.001Z", 
-    "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
-  },
-  { 
-    "event_id": "event_id", 
-    "event_name": "event_name", 
-    "event_tag": "event_tag",
-    "start_date": "2019-12-02T12:30:30.001Z", 
-    "end_date": "2019-05-04T12:30:30.001Z", 
-    "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
-  }
-
-]
+{
+  "ticket_sold": "ticket_sold",
+  "revenue": "revenue"
+}
 ```
 
-## get_events_by_status (Retreive event)
+## get_recent_orders
 
-> Endpoint: get_events_by_status
+> Endpoint: get_recent_orders
 
 > Payload
 
 ```json
 {
-    "username": "username", "status":"status"
+    "idToken" : "idToken",
+    "uid" : "uid",
+    "accountid" :"accountid",
+    "number_of_orders": "number_of_orders"
 }
 ```
 
@@ -158,155 +159,27 @@ Endpoint for Tixy
 [
   {
     "event_id": "event_id",
-    "event_name": "event_name",
     "event_tag": "event_tag",
-    "start_date": "start_date",
-    "end_date": "end_date",
-    "username": "username",
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue",
-    "status": "status"
-  },
-  {
-    "event_id": "event_id",
-    "event_name": "event_name",
-    "event_tag": "event_tag",
-    "start_date": "start_date",
-    "end_date": "end_date",
-    "username": "username",
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue",
-    "status": "status"
-  }
-]
-```
-
-## get_events_by_tag (Retreive event)
-
-> Endpoint: get_events_by_tag
-
-> Payload
-
-```json
-{
-    "username": "username", "tag":"tag"
-}
-```
-
-> Result
-
-```json
-
-[
-   {
-    "event_id": "event_id", 
-    "event_name": "event_name", 
-    "event_tag": "event_tag",
-    "start_date": "start_date", 
-    "end_date": "end_date", 
-    "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
-  },
-    
-    {
-    "event_id": "event_id", 
-    "event_name": "event_name", 
-    "event_tag": "event_tag",
-    "start_date": "start_date", 
-    "end_date": "end_date", 
-    "username": "username", 
-    "no_tickets_sold": "no_tickets_sold",
-    "revenue": "revenue", 
-    "status": "status"
-  }
-
-]
-```
-
-## get_no_of_sold_tickets 
-
-> Endpoint: get_no_of_sold_tickets
-
-> Payload
-
-```json
-{
-    "username": "username", "period":"period"
-}
-```
-
-> Result
-
-```json
-
-{"number_of_tickets_sold": "number_of_tickets_sold"}
-```
-
-## get_total_revenue 
-
-> Endpoint: get_no_of_sold_tickets
-
-> Payload
-
-```json
-{
-    "username": "username", "period":"period"
-}
-```
-
-> Result
-
-```json
-
-{"total_revenue":"total_revenue"}
-```
-
-## get_recent_purchases_by_email (Retreive top 10 tickets purchase records)
-
-> Endpoint: get_recent_purchases_by_email
-
-> Payload
-
-```json
-{
-    "email": "email"
-}
-```
-
-> Result
-
-```json
-
-[
-  {
-    "ticket_buyer_name": "ticket_buyer_name",
+    "order_id": "order_id",
+    "buyer_name":"buyer_name",
     "amount": "amount",
-    "event_name": "event_name",
-    "purchase_date": "purchase_date"
-  },
-  {
-    "ticket_buyer_name": "ticket_buyer_name",
-    "amount": "amount",
-    "event_name": "event_name",
     "purchase_date": "purchase_date"
   }
 ]
 
 ```
 
+## get_tickets_by_order_id
 
-
-## get_ticket_purchase_details
-
-> Endpoint: get_ticket_purchase_details
+> Endpoint: get_tickets_by_order_id
 
 > Payload
 
 ```json
 {
-    "ticket_id": "ticket_id",
+    "idToken" : "idToken",
+    "uid" : "uid",
+    "order_id" :"order_id"
 }
 ```
 
@@ -315,29 +188,49 @@ Endpoint for Tixy
 ```json
 
 [ 
-  { 
-    "name": "name",
-    "email": "email", 
-    "event_tag": "event_tag",
-    "purchase_date": "2019-12-02T12:30:30.001Z",
+  {
     "ticket_id": "ticket_id",
-    "ticket_type": "ticket_type"
-
-  },
-  { 
-    "name": "name",
-    "email": "email", 
-    "event_tag": "event_tag",
-    "purchase_date": "2019-12-02T12:30:30.001Z",
-    "ticket_id": "ticket_id",
-    "ticket_type": "ticket_type"
-
+    "attendees_name": "attendees_name",
+    "attendee_email": "attendee_email",
+    "ticket_name": "ticket_name",
+    "attendee_ticket_id": "attendee_ticket_id"
   }
 
 ]
 ```
 
-## create_event (create a new event)
+## get_tickets_by_event_id
+
+> Endpoint: get_tickets_by_order_id
+
+> Payload
+
+```json
+{
+    "idToken" : "idToken",
+    "uid" : "uid",
+    "event_id" :"event_id"
+}
+```
+
+> Result
+
+```json
+
+[ 
+  {
+    "ticket_id": "ticket_id",
+    "attendees_name": "attendees_name",
+    "attendee_email": "attendee_email",
+    "ticket_name": "ticket_name",
+    "attendee_ticket_id": "attendee_ticket_id",
+    "check_in_status": "check_in_status"
+  }
+
+]
+```
+
+## create_event
 
 > Endpoint: create_event
 
@@ -345,54 +238,57 @@ Endpoint for Tixy
 
 ```json
 {
-    "username":"username",
-    "event_name":"event_name",
-    "event_tag":"event_tag",
-    "description":"description",
-    "start_date":"start_date",
-    "end_date":"end_date"
+    "idToken": "idToken", 
+    "uid" : "idToken",
+    "event_name" : "event_name",
+    "event_tag": "event_tag",
+    "description": " description"
 }
 ```
 
 > Result
 
 ```json
-{   "event_ref":"event_ref",
-    "username":"username",
-   "event_name":"event_name",
-   "event_tag":"event_tag",
-   "description":"description",
-   "start_date":"start_date",
-   "end_date":"end_date"    
-
-   } 
+{ 
+  "status": 200,
+  "text": "event created Succesfully"
+}
 
 ```
 
-## edit_user_info 
+## edit_user 
 
-> Endpoint: edit_user_info 
+> Endpoint: edit_user
 
 > Payload
 
 ```json
 {
-    "event_name":"event_name",
-    "event_tag":"event_tag",
-    "description":"description",
-    "start_date":"start_date",
-    "email":"email",
-    "end_date":"end_date",
-    "twitter_link":"twitter_link",
-    "facebook_link":"facebook_link"
-}
+    "idToken": "idToken",
+    "uid" : "uid",
+    "accountid": "accountid",
+    "email": "email",
+    "organizer": "organizer",
+    "industry": "industry",
+    "password": "password",
+    "website": "website",
+    "plan": "plan",
+    "facebook_link": "facebook_link",
+    "google_analytic_code": "google_analytic_code",
+    "twitter_link": "twitter_link",
+    "logo": "logo",
+    "image": "image"
+  }
 ```
 
 > Result
 
 ```json
 
-"User info updated Successfully"
+{
+  "status": 200,
+  "text": "Ticket edited successful"
+}
 
 ```
 
@@ -406,10 +302,10 @@ Endpoint for Tixy
 ```json
 { 
 
-  "username": "username",
-  "event_name": "event_name",
-  "period":"period"
-
+  "idToken": "idToken",
+  "uid": "uid",
+  "event_id": "event_id",
+  "period": "period"
 }
 ```
 
@@ -417,72 +313,27 @@ Endpoint for Tixy
 
 ```json
 {
-  "orders": "total_number_of_orders",
-  "ticket_sold": "total_ticket_sold",
+  "orders": "total_orders",
+  "ticket_sold": "ticket_sold",
+  "total_revenue": "total_revenue",
   "total_event_page_view": "total_event_page_view",
-  "revenue_ticketsold_details": [
-    {
-      "date": "date",
-      "amount": "amount",
-      "no_of_tickets": "no_of_tickets"
-    },
-    {
-      "date": "date",
-      "amount": "amount",
-      "no_of_tickets": "no_of_tickets"
-    },
-    {
-      "date": "date",
-      "amount": "amount",
-      "no_of_tickets": "no_of_tickets"
-    }
-  ],
-  "registration_details": [
-    {
-      "Male": "no_of_male",
-      "Female": "no_of_female",
-      "Other": "no_of_other"
-    },
-    {
-      "under_20": "number_of_under_20",
-      "21-30": "number_of_21-30",
-      "31+": "number_of_31"
-    },
-    {
-      "Ticket1": "number_of_ticket1",
-      "Ticket2": "number_of_ticket2",
-      "Ticket3": "number_of_ticket3"
-    }
-  ],
-  "event_view_details": [
-    {
-      "date": "date",
-      "views": "number_of_views"
-    },
-    {
-      "date": "date",
-      "views": "number_of_views"
-    },
-    {
-      "date": "date",
-      "views": "number_of_views"
-    }
-  ]
+  "ticket_details": "tickets_details",
+  "registration_details": "registration_details",
+  "event_view_details": "event_views"
 }
 ```
 
-## get_event_ticket_details
+## get_ticket_categories
 
-> Endpoint: get_event_ticket_details
+> Endpoint: get_ticket_categories
 
 > Payload
 
 ```json
 { 
-
-  "username": "username",
-  "event_name": "event_name"
-
+  "idToken": "idToken",
+  "uid": "uid",
+  "event_id": "event_id"
 }
 ```
 
@@ -492,40 +343,39 @@ Endpoint for Tixy
 
 [
   {
-    "ticket_name": "Ticket1",
-    "amount": "amount",
+    "ticket_category_id":"ticket_category_id",
+    "category_name": "category_name",
+    "price":"price",
+    "description":"description",
     "sales_start_date": "sales_start_date",
     "sales_end_date": "sales_end_date",
-    "no_of_ticket_sold": "no_of_ticket_sold",
     "Quantity_available": "Quantity_available",
-    "Revenue": "Revenue"
-  },
-  {
-    "ticket_name": "Ticket2",
-    "amount": "amount",
-    "sales_start_date": "sales_start_date",
-    "sales_end_date": "sales_end_date",
-    "no_of_ticket_sold": "no_of_ticket_sold",
-    "Quantity_available": "Quantity_available",
-    "Revenue": "Revenue"
+    "minimum_tickets_per_order": "minimum_tickets_per_order",
+    "maximum_tickets_per_order": "maximum_tickets_per_order"
   }
 ]
 ```
 
-## create_ticket 
+## create_ticket_category 
 
-> Endpoint: create_ticket
+> Endpoint: create_ticket_category
 
 > Payload
 
 ```json
 {
-  "username": "username",
-  "event_name": "event_name",
-  "ticket_name": "ticket_name",
+  "idToken": "idToken",
+  "uid": "uid",
+  "accountid": "accountid",
+  "event_id": "event_id",
+  "ticket_category_name": "ticket_category_name",
   "price": "price",
   "description": "description",
-  "Quantity Available": "Quantity Available"
+  "sales_start_date": "sales_start_date",
+  "sales_end_date": "sales_end_date",
+  "Quantity_available": "Quantity_available",
+  "minimum_tickets_per_order": "minimum_tickets_per_order",
+  "maximum_tickets_per_order": "maximum_tickets_per_order"
 }
 ```
 
@@ -533,21 +383,22 @@ Endpoint for Tixy
 
 ```json
   
-  "Ticket Created Successfully"
+  "Ticket Category Created Successfully"
 
 ```
 
-## get_ticket_purchase_details
+## get_event_orders
 
-> Endpoint: get_ticket_purchase_details
+> Endpoint: get_event_orders
 
 > Payload
 
 ```json
 {
-    "username": "username",
-    "event_name": "event_name"
-
+    "idToken": "idToken",
+    "uid": "uid",
+    "accountid": "accountid",
+    "event_id": "event_id"
 }
 ```
 
@@ -555,41 +406,37 @@ Endpoint for Tixy
 
 ```json
   [
-    { 
-      "ticket_buyer_name": "ticket_buyer_name",
-      "amount":"amount",
-      "no_of_ticket_purchased":"no_of_ticket_purchased",
-      "purchase_date":"purchase_date",
-      "ticket_id":"ticket_id",
-      "email":"email"
-    },
-    { 
-      "ticket_buyer_name": "ticket_buyer_name",
-      "amount":"amount",
-      "no_of_ticket_purchased":"no_of_ticket_purchased",
-      "purchase_date":"purchase_date",
-      "ticket_id":"ticket_id",
-      "email":"email"
-    }
+    {
+      "order_id": "order_id",
+      "buyer_name": "buyer_name",
+      "email": "email", 
+      "amount": "amount",
+      "payment_status": "payment_status",
+      "order_date": "order_date"
+     }
   ]
 ```
-## edit_ticket
+## edit_ticket_categories
 
-> Endpoint: edit_ticket
+> Endpoint: edit_ticket_categories
 
 > Payload
 
 ```json
 {
-  "username": "username",
-  "event_name": "event_name",
-  "ticket_name": "ticket_name",
+  "idToken": "idToken",
+  "uid": "uid",
+  "accountid": "accountid",
+  "event_id": "event_id",
+  "ticket_category_id":"ticket_category_id",
+  "category_name":"category_name",
+  "amount":"amount",
   "Quantity_available": "Quantity_available",
   "description": "description",
   "sales_start_date": "sales_start_date",
   "sales_end_date": "sales_end_date",
   "minimum_tickets_per_order": "minimum_tickets_per_order",
-  "max_tickets_per_order": "max_tickets_per_order"
+  "maximum_tickets_per_order": "maximum_tickets_per_order"
 }
 ```
 
@@ -597,461 +444,36 @@ Endpoint for Tixy
 
 ```json
  
-  "Tickets Updates Successfully"
-
-```
-
-## get_attendees
-
-> Endpoint: get_attendees
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name": "event_name",
-  "status": "status",
-  "payment": "payment"
-}
-```
-
-> Result
-
-```json
-  [
   {
-    "name": "name",
-    "email": "email",
-    "ticket_type": "ticket_type",
-    "check_in status": false
-  },
-  {
-    "name": "name",
-    "email": "email",
-    "ticket_type": "ticket_type",
-    "check_in status": false
-  },
-  {
-    "name": "name",
-    "email": "email",
-    "ticket_type": "ticket_type",
-    "check_in status": false
+    "status": 200,
+    "text": "Ticket category edited successful"
   }
-]
+
 ```
 
-## get_event_details
+## check_in_status
 
-> Endpoint: get_event_details
+> Endpoint: check_in_status
 
 > Payload
 
 ```json
 {
-  "username": "username",
-  "event_name": "event_name"
+  "idToken": "idToken",
+  "uid": "uid",
+  "ticket_id": "ticket_id"
 }
 ```
 
 > Result
 
 ```json
- {
-  "event_name": "Valentine Fest",
-  "description": "description",
-  "start_date": "start_date",
-  "end_date": "end_date",
-  "venue_name": "venue_name",
-  "city": "city",
-  "address": "address"
-}
-```
-
-## get_orders_by_event_name
-
-> Endpoint: get_attendees
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "status":"status",
-  "payment":"payment"
-
-}
-```
-
-> Result
-
-```json
-  [
+ 
   {
-    "name": "name",
-    "email": "email",
-    "order_date": "date",
-    "amount": "amount",
-    "payment_status": "payment_status"
-  },
-  {
-    "name": "name",
-    "email": "email",
-    "order_date": "date",
-    "amount": "amount",
-    "payment_status": "payment_status"
-  },
-  {
-    "name": "name",
-    "email": "email",
-    "order_date": "date",
-    "amount": "amount",
-    "payment_status": "payment_status"
+    "status": 200,
+    "text": "check in status updated successful"
   }
-]
+
 ```
 
-## edit_event
 
-> Endpoint: edit_event
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "new_event_name":"new_event_name",
-  "description":"description",
-  "start_date":"start_date",
-  "end_date":"end_date",
-  "venue_name":"venue_name",
-  "city":"city",
-  "address":"address",
-  "image_link":"image_link",
-  "logo_link":"logo_link"
-
-}
-```
-
-> Result
-
-```json
-  "Event  Updated Successfully"
-```
-
-## get_surveys
-
-> Endpoint: get_surveys
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name"
-}
-```
-
-> Result
-
-```json
-[
-  {
-    "survey_id": "survey_id",
-    "question": "What does Fox say",
-    "ticket": [
-      "ticket1", "ticket2"
-    ],
-    "channel": "channel",
-    "answers": "number_of_answers"
-  },
-  {
-    "survey_id": "survey_id",
-    "question": "What does Fox say",
-    "ticket": [
-      "ticket1", "ticket2"
-    ],
-    "channel": "channel",
-    "answers": "number_of_answers"
-  }
-]
-  
-```
-
-## get_survey_answers
-
-> Endpoint: get_survey_answers
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "survey_id":"survey_id"
-}
-```
-
-> Result
-
-```json
-[
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  },
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  },
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  }
-]
-  
-```
-
-## create_survey
-
-> Endpoint: create_survey
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "survey_id":"survey_id"
-}
-```
-
-> Result
-
-```json
-[
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  },
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  },
-  {
-    "respondent": "respondent",
-    "answer": "answer"
-  }
-]
-  
-```
-
-##create_event_messages
-
-> Endpoint: create_event_messages
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "message_body":"message_body",
-  "message_subject":"message_subject",
-  "group":"group",
-  "ticket":"ticket"
-
-}
-```
-
-> Result
-
-```json
-"Message Composed Succesfully"
-  
-```
-
-##get_payment_messages
-
-> Endpoint: get_payment_messages
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name"
-
-}
-```
-
-> Result
-
-```json
-{
-  "message_before_payment": "message_before_payment",
-  "message_after_payment": "message_after_payment",
-  "offline_payment_message": "offline_payment_message"
-}
-  
-```
-
-##save_payment_messages
-
-> Endpoint: save_payment_messages
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "message_before_payment": "message_before_payment",
-  "message_after_payment": "message_after_payment",
-  "offline_payment_message": "offline_payment_message"
-
-}
-```
-
-> Result
-
-```json
-"Message Created Succesfully"
-  
-```
-
-##get_ticket_design
-
-> Endpoint: get_ticket_design
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "ticket_name": "ticket_name"
-
-}
-```
-
-> Result
-
-```json
-{
-  "background_color":"background_color",
-  "accent_color":"accent_color",
-  "logo":"logo"
-}
-  
-```
-
-##save_ticket_design
-
-> Endpoint: save_ticket_design
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "ticket_name": "ticket_name",
-  "background_color":"background_color",
-  "accent_color":"accent_color",
-  "logo":"logo"
-
-}
-```
-
-> Result
-
-```json
-"Design Saved Succesfully"
-  
-```
-
-##get_orders_by_event_name
-
-> Endpoint: get_orders_by_event_name
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "status":"status",
-  "payment":"payment"
-}
-```
-
-> Result
-
-```json
-[
-  {
-    "ticket_buyer_name": "ticket_buyer_name",
-    "email": "email",
-    "ticketid": "ticketid",
-    "purchase_date": "ticketid",
-    "amount": "amount",
-    "no_of_ticket_purchased": "no_of_ticket_purchased",
-    "status": "status",
-    "payment": "payment"
-  },
-  {
-    "ticket_buyer_name": "ticket_buyer_name",
-    "email": "email",
-    "ticketid": "ticketid",
-    "purchase_date": "ticketid",
-    "amount": "amount",
-    "no_of_ticket_purchased": "no_of_ticket_purchased",
-    "status": "status",
-    "payment": "payment"
-  }
-]
-  
-```
-
-##get_message_details
-
-> Endpoint: get_message_details
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "group": "group",
-  "ticket":"ticket"
-
-}
-```
-
-> Result
-
-```json
-[
-  {
-  "message_id": "message_id",
-  "message": "message",
-  "respondent": "respondent",
-  "mail_opened": "mail_opened",
-  "group": "group",
-  "ticket":[ "tickets"]
-  },
-  {
-  "message_id": "message_id",
-  "message": "message",
-  "respondent": "respondent",
-  "mail_opened": "mail_opened",
-  "group": "group",
-  "ticket":[ "tickets"]
-  }
-]
-
-```
