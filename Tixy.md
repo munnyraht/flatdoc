@@ -461,7 +461,8 @@ Endpoint for Tixy
 {
   "idToken": "idToken",
   "uid": "uid",
-  "ticket_id": "ticket_id"
+  "ticket_id": "ticket_id",
+  "status":"status"
 }
 ```
 
@@ -475,5 +476,33 @@ Endpoint for Tixy
   }
 
 ```
+
+## edit_event
+
+> Endpoint: edit_event
+
+> Payload
+
+```json
+{
+  "username": "username",
+  "event_name":"event_name",
+  "new_event_name":"new_event_name",
+  "description":"description",
+  "start_date":"start_date",
+  "end_date":"end_date",
+  "venue_name":"venue_name",
+  "city":"city",
+  "address":"address",
+  "image_link":"image_link",
+  "logo_link":"logo_link"
+
+}
+```
+
+> Result
+
+```json
+  "Event  Updated Successfully"
 
 
