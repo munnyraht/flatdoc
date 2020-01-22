@@ -56,9 +56,9 @@ Endpoint for Tixy
 ```
 ## get_accountid
 
-> Endpoint: get_events
+> Endpoint: get_accountid
 
-> Payload('status' and 'event_tag' are not required)
+> Payload
 
 ```json
 { 
@@ -80,15 +80,17 @@ Endpoint for Tixy
 
 > Endpoint: get_events
 
-> Payload('status' and 'event_tag' are not required)
+> Payload(filter is not required)
 
 ```json
 { 
     "idToken": "idToken",
      "uid":"uid",
      "accountid": "accountid",
-     "status":"status",
-     "event_tag": "event_tag"
+     "filter":{
+      "status": true,
+      "event_tag": "payment_method"
+     }
 
 }
 ```
@@ -209,7 +211,11 @@ Endpoint for Tixy
 {
     "idToken" : "idToken",
     "uid" : "uid",
-    "event_id" :"event_id"
+    "event_id" :"event_id",
+    "filter":{
+      "check_in_status": true,
+      "payment_method": "payment_method"
+     }
 }
 ```
 
@@ -224,7 +230,8 @@ Endpoint for Tixy
     "attendee_email": "attendee_email",
     "ticket_name": "ticket_name",
     "attendee_ticket_id": "attendee_ticket_id",
-    "check_in_status": "check_in_status"
+    "check_in_status": true,
+    "payment_method": "payment_method"
   }
 
 ]
@@ -256,9 +263,9 @@ Endpoint for Tixy
 
 ```
 
-## edit_user 
+## update_account 
 
-> Endpoint: edit_user
+> Endpoint: update_account
 
 > Payload
 
@@ -287,7 +294,7 @@ Endpoint for Tixy
 
 {
   "status": 200,
-  "text": "Ticket edited successful"
+  "text": "Account updated successful"
 }
 
 ```
@@ -325,7 +332,7 @@ Endpoint for Tixy
 
 ## get_ticket_categories
 
-> Endpoint: get_ticket_categories
+> Endpoint: get_ticket_category
 
 > Payload
 
@@ -398,7 +405,11 @@ Endpoint for Tixy
     "idToken": "idToken",
     "uid": "uid",
     "accountid": "accountid",
-    "event_id": "event_id"
+    "event_id": "event_id",
+    "filter":{ "payment_status": "payment_status",
+                "payment_method": "payment_method"
+
+    }
 }
 ```
 
@@ -412,7 +423,8 @@ Endpoint for Tixy
       "email": "email", 
       "amount": "amount",
       "payment_status": "payment_status",
-      "order_date": "order_date"
+      "order_date": "order_date",
+      "payment_method":"payment_method"
      }
   ]
 ```
@@ -430,7 +442,7 @@ Endpoint for Tixy
   "event_id": "event_id",
   "ticket_category_id":"ticket_category_id",
   "category_name":"category_name",
-  "amount":"amount",
+  "price":"price",
   "Quantity_available": "Quantity_available",
   "description": "description",
   "sales_start_date": "sales_start_date",
