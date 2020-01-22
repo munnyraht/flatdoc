@@ -517,4 +517,94 @@ Endpoint for Tixy
 ```json
   "Event  Updated Successfully"
 
+```
 
+## send_mail
+
+> Endpoint: send_mail
+
+> Payload
+
+```json
+{
+  "idToken": "idToken",
+  "uid": "uid",
+  "event_id": "event_id",
+  "message_subject" : "message_subject",
+  "message_body" : "message_body",
+  "recipient_group": "recipient_group",
+  "ticket_category_ids": "ticket_category_ids"
+
+}
+```
+
+> Result
+
+```json
+  "Mail Sent Successfully"
+
+```
+
+## update_event
+
+> Endpoint: update_event
+
+> Payload
+
+```json
+{
+  "idToken": "idToken",
+  "uid": "uid",
+  "event_id": "event_id",
+  "email":"email",
+  "organizer": "organizer",
+  "industry": "industry",
+  "password" : "password",
+  "website": "website",
+  "plan" : "plan",
+  "facebook_link": "facebook_link",
+  "google_analytic_code" : "google_analytic_code",
+  "twitter_link" : "twitter_link",
+  "logo" : "logo",
+  "image" : "image"
+
+}
+```
+
+> Result
+
+```json
+  
+  "Event Updated Successfully"
+
+```
+
+## get_account_details
+
+> Endpoint: get_account_details
+
+> Payload
+
+```json
+{
+  "idToken": "idToken",
+  "uid": "uid",
+  "accountid": "accountid"
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "created_at": "created_at",
+    "industry": "industry",
+    "website": "website",
+    "twitter_link": "twitter_link",
+    "plan": "plan",
+    "updated_at": "updated_at",
+    "organizer": "organizer"
+}
+
+```
