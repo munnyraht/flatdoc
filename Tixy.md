@@ -276,10 +276,7 @@ Endpoint for Tixy
     "accountid": "accountid",
     "email": "email",
     "organizer": "organizer",
-    "industry": "industry",
-    "password": "password",
     "website": "website",
-    "plan": "plan",
     "facebook_link": "facebook_link",
     "google_analytic_code": "google_analytic_code",
     "twitter_link": "twitter_link",
@@ -533,7 +530,8 @@ Endpoint for Tixy
   "message_subject" : "message_subject",
   "message_body" : "message_body",
   "recipient_group": "recipient_group",
-  "ticket_category_ids": "ticket_category_ids"
+  "ticket_category_ids": "ticket_category_ids",
+  // send a list of ticket ticket_category id for
 
 }
 ```
@@ -608,3 +606,69 @@ Endpoint for Tixy
 }
 
 ```
+
+## buy_tickets
+
+> Endpoint: get_account_details
+
+> Payload
+
+```json
+{
+  "buyer":{
+    "fname ":"fname",
+    "lname":"lname",
+    "email":"email",
+    "amount":"amount",
+    "number_of_tickets":"number_of_tickets",
+    "fees":"fees"
+  },
+  "attendees":[
+                {
+                  "fname":"fname",
+                  "lname":"lname",
+                  "email":"email"
+                },
+                {
+                  "fname":"fname",
+                  "lname":"lname",
+                  "email":"email"
+                }
+              ]
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "":""
+  }
+
+```
+
+
+## event_page_views
+
+> Endpoint: event_page_views
+
+> Payload
+
+```json
+{
+  "event_id":"event_id"
+}
+```
+
+> Result
+
+```json
+  
+  "OK"
+
+```
+
+
+
+
