@@ -125,7 +125,8 @@ Endpoint for Tixy
     "idToken" : "idToken",
      "uid": "uid",
      "accountid": "accountid",
-     "period": "period"
+     "period": "period",
+      // period format must be -%Y-%m-%dT%H:%M:%S.%fZ
 }
 ```
 
@@ -309,7 +310,8 @@ Endpoint for Tixy
   "idToken": "idToken",
   "uid": "uid",
   "event_id": "event_id",
-  "period": "period"
+  "period": "period",
+   // period format must be -%Y-%m-%dT%H:%M:%S.%fZ
 }
 ```
 
@@ -486,35 +488,6 @@ Endpoint for Tixy
 
 ```
 
-## edit_event
-
-> Endpoint: edit_event
-
-> Payload
-
-```json
-{
-  "username": "username",
-  "event_name":"event_name",
-  "new_event_name":"new_event_name",
-  "description":"description",
-  "start_date":"start_date",
-  "end_date":"end_date",
-  "venue_name":"venue_name",
-  "city":"city",
-  "address":"address",
-  "image_link":"image_link",
-  "logo_link":"logo_link"
-
-}
-```
-
-> Result
-
-```json
-  "Event  Updated Successfully"
-
-```
 
 ## send_mail
 
@@ -554,15 +527,12 @@ Endpoint for Tixy
   "idToken": "idToken",
   "uid": "uid",
   "event_id": "event_id",
-  "email":"email",
-  "organizer": "organizer",
-  "industry": "industry",
-  "password" : "password",
-  "website": "website",
-  "plan" : "plan",
-  "facebook_link": "facebook_link",
-  "google_analytic_code" : "google_analytic_code",
-  "twitter_link" : "twitter_link",
+  "event_name":"event_name",
+  "start_date":"start_date",
+  "end_date":"end_date",
+  "venue ":"venue",
+  "city":"city",
+  "address": "address",
   "logo" : "logo",
   "image" : "image"
 
@@ -668,6 +638,34 @@ Endpoint for Tixy
   "OK"
 
 ```
+
+## get_event_page_details
+
+> Endpoint: get_event_page_details
+
+> Payload
+
+```json
+{
+  "idToken":  "idToken",
+  "uid" : "uid",
+  "event_id":"event_id",
+  "period": "period"
+}
+```
+
+> Result
+
+```json
+  
+ {
+  "date":"views",
+  "dtae":"views"
+ }
+
+```
+
+
 
 
 
