@@ -665,7 +665,41 @@ Endpoint for Tixy
 
 ```
 
+## get_event_details
 
+> Endpoint: get_event_details
+
+> Payload
+
+```json
+{
+  "idToken": "idToken",
+  "uid": "uid",
+  "event_id": "event_id"
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "event_name": "event_name",
+    "event_tag": "event_tag",
+    "start_date": "start_date",
+    "twitter_link": "twitter_link",
+    "image_link": "",
+    "venue": "",
+    "city": "",
+    "created_at": "created_at",
+    "end_date": "end_date",
+    "address": "address",
+    "updated_at": "updated_at",
+    "description": " description",
+    "logo_link": ""
+}
+
+```
 
 
 
