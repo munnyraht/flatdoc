@@ -164,42 +164,22 @@ Endpoint for Tixy
     "event_id": "event_id",
     "event_tag": "event_tag",
     "order_id": "order_id",
-    "buyer_name":"buyer_name",
+    "buyer_name": "buyer_name",
     "amount": "amount",
-    "purchase_date": "purchase_date"
+    "purchase_date": "purchase_date",
+    " number_of_ticket": "number_of_ticket",
+    "tickets": [
+      {
+        "ticket_name": "ticket_name",
+        "attendees_email": "attendees_email",
+        "ticket_id": "ticket_id",
+        "attendees_name": "attendees_name",
+        "price": "price"
+      }
+    ]
   }
 ]
 
-```
-
-## get_tickets_by_order_id
-
-> Endpoint: get_tickets_by_order_id
-
-> Payload
-
-```json
-{
-    "idToken" : "idToken",
-    "uid" : "uid",
-    "order_id" :"order_id"
-}
-```
-
-> Result
-
-```json
-
-[ 
-  {
-    "ticket_id": "ticket_id",
-    "attendees_name": "attendees_name",
-    "attendee_email": "attendee_email",
-    "ticket_name": "ticket_name",
-    "attendee_ticket_id": "attendee_ticket_id"
-  }
-
-]
 ```
 
 ## get_tickets_by_event_id
@@ -231,7 +211,7 @@ Endpoint for Tixy
     "attendee_email": "attendee_email",
     "ticket_name": "ticket_name",
     "attendee_ticket_id": "attendee_ticket_id",
-    "check_in_status": true,
+    "check_in_status": "check_in_status",
     "payment_method": "payment_method"
   }
 
@@ -416,16 +396,30 @@ Endpoint for Tixy
 
 ```json
   [
-    {
-      "order_id": "order_id",
-      "buyer_name": "buyer_name",
-      "email": "email", 
-      "amount": "amount",
-      "payment_status": "payment_status",
-      "order_date": "order_date",
-      "payment_method":"payment_method"
-     }
-  ]
+  {
+    "order_id": "order_id",
+    "buyer_name": "buyer_name",
+    "email": "email",
+    "amount": "amount",
+    "payment_status": "payment_status",
+    "order_date": "order_date",
+    "payment_method": "payment_method",
+    "tickets": [
+      {
+        "ticket_name": "ticket_name",
+        "ticket_id": "ticket_id",
+        "attendee_email": "attendee_email"
+      }
+    ],
+    "ticket_details": [
+      {
+        "ticket_name": "ticket_name",
+        "quantity": 2,
+        "amount": "50000"
+      }
+    ]
+  }
+]
 ```
 ## edit_ticket_categories
 
