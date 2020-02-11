@@ -184,7 +184,7 @@ Endpoint for Tixy
 
 ## get_tickets_by_event_id
 
-> Endpoint: get_tickets_by_order_id
+> Endpoint: get_tickets_by_event_id
 
 > Payload
 
@@ -691,6 +691,30 @@ Endpoint for Tixy
     "updated_at": "updated_at",
     "description": " description",
     "logo_link": ""
+}
+
+```
+## plan_subscription_callback
+
+> Endpoint: plan_subscription_callback
+
+> Payload
+
+```json
+{
+  "accountRef" : "accountRef",
+  "reference" : "reference",
+  "plan": "plan"
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "status": 200,
+    "text": "Account Subscription updated successful"
 }
 
 ```
