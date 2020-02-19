@@ -195,7 +195,7 @@ Endpoint for Tixy
     "event_id" :"event_id",
     "filter":{
       "check_in_status": true,
-      "payment_method": "payment_method"
+      "ticket_name": "ticket_name"
      }
 }
 ```
