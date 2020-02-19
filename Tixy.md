@@ -497,8 +497,7 @@ Endpoint for Tixy
   "message_subject" : "message_subject",
   "message_body" : "message_body",
   "recipient_group": "recipient_group",
-  "ticket_category_ids": "ticket_category_ids",
-  // send a list of ticket ticket_category id for
+  "ticket_categories": ["ticket_category1", "ticket_category1" ]
 
 }
 ```
