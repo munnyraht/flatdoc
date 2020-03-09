@@ -230,7 +230,13 @@ Endpoint for Tixy
     "uid" : "idToken",
     "event_name" : "event_name",
     "event_tag": "event_tag",
-    "description": " description"
+    "description": " description",
+    "address":"address",
+    "banner":"banner",
+    "city":"city",
+    "image":"image",
+    "logo":"logo",
+    "venue":"venue"
 }
 ```
 
@@ -496,7 +502,7 @@ Endpoint for Tixy
   "event_id": "event_id",
   "message_subject" : "message_subject",
   "message_body" : "message_body",
-  "recipient_group": "recipient_group",
+  "recipient_group": ["recipient_group"],
   "ticket_categories": ["ticket_category1", "ticket_category1" ]
 
 }
@@ -714,6 +720,33 @@ Endpoint for Tixy
   {
     "status": 200,
     "text": "Account Subscription updated successful"
+}
+
+```
+
+## delete_ticket_category
+
+> Endpoint: delete_ticket_category
+
+> Payload
+
+```json
+{
+  "idToken": "idToken",
+  "uid" : "uid",
+  "accountid"  : "accountid",
+  "event_id": "event_id",
+  "ticket_category_id": "ticket_category_id"
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "status": 200,
+    "text": "ticket category deleted successfully'"
 }
 
 ```
