@@ -236,7 +236,9 @@ Endpoint for Tixy
     "city":"city",
     "image":"image",
     "logo":"logo",
-    "venue":"venue"
+    "venue":"venue",
+    "end_date": "end_date",
+    "start_date": "start_date"
 }
 ```
 
@@ -747,6 +749,39 @@ Endpoint for Tixy
   {
     "status": 200,
     "text": "ticket category deleted successfully'"
+}
+
+```
+## open_event_details
+
+> Endpoint: open_event_details
+
+> Payload
+
+```json
+{
+  "event_id": "event_id"
+
+}
+```
+
+> Result
+
+```json
+  
+  {
+    "description": "description",
+    "logo": "logo",
+    "start_date": "start_date",
+    "logo_link": "logo_link",
+    "twitter_link": "twitter_link",
+    "event_tag": "event_tag",
+    "venue": "venue",
+    "city": "city",
+    "event_name": "event_name",
+    "end_date": "end_date",
+    "banner": "banner",
+    "address": "address"
 }
 
 ```
