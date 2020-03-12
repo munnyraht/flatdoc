@@ -787,5 +787,34 @@ Endpoint for Tixy
 ```
 
 
+## get_ticket_categories
 
+> Endpoint: open_ticket_categories
 
+> Payload
+
+```json
+{ 
+
+  "event_id": "event_id"
+}
+```
+
+> Result
+
+```json
+
+[
+  {
+    "ticket_category_id":"ticket_category_id",
+    "category_name": "category_name",
+    "price":"price",
+    "description":"description",
+    "sales_start_date": "sales_start_date",
+    "sales_end_date": "sales_end_date",
+    "Quantity_available": "Quantity_available",
+    "minimum_tickets_per_order": "minimum_tickets_per_order",
+    "maximum_tickets_per_order": "maximum_tickets_per_order"
+  }
+]
+```
