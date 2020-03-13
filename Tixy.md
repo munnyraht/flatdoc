@@ -587,8 +587,8 @@ Endpoint for Tixy
 ```json
 {
   "buyer":{
-    "fname ":"fname",
-    "lname":"lname",
+    "first_name ":"first_name",
+    "last_name":"last_name",
     "email":"email",
     "amount":"amount",
     "number_of_tickets":"number_of_tickets",
@@ -596,14 +596,16 @@ Endpoint for Tixy
   },
   "attendees":[
                 {
-                  "fname":"fname",
-                  "lname":"lname",
-                  "email":"email"
+                  "first_name":"last_name",
+                  "last_name":"last_name",
+                  "email":"email",
+                  "ticket_category_id": "ticket_category_id"
                 },
                 {
-                  "fname":"fname",
-                  "lname":"lname",
-                  "email":"email"
+                  "first_name":"last_name",
+                  "last_name":"last_name",
+                  "email":"email",
+                  "ticket_category_id": "ticket_category_id"
                 }
               ]
 }
@@ -613,10 +615,10 @@ Endpoint for Tixy
 
 ```json
   
-  {
-    "":""
-  }
-
+ {
+  "error": 200,
+  "text": "Details saved successfully"
+}
 ```
 
 
@@ -787,7 +789,7 @@ Endpoint for Tixy
 ```
 
 
-## get_ticket_categories
+## open_ticket_categories
 
 > Endpoint: open_ticket_categories
 
@@ -818,3 +820,5 @@ Endpoint for Tixy
   }
 ]
 ```
+
+
