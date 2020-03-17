@@ -578,14 +578,15 @@ Endpoint for Tixy
 
 ```
 
-## buy_tickets
+## buy_ticket
 
-> Endpoint: get_account_details
+> Endpoint: buy_ticket
 
 > Payload
 
 ```json
 {
+  "event_id": "event_id",
   "buyer":{
     "first_name ":"first_name",
     "last_name":"last_name",
@@ -819,6 +820,31 @@ Endpoint for Tixy
     "maximum_tickets_per_order": "maximum_tickets_per_order"
   }
 ]
+```
+
+## ticket_purchase_callback
+
+> Endpoint: ticket_purchase_callback
+
+> Payload
+
+```json
+{
+  "order_id": "order_id",
+  "transaction_reference":"transaction_reference",
+  "payment_platform": "payment_platform"
+}
+```
+
+> Result
+
+```json
+  
+  {
+  "status": 200, 
+  "text": "payment status updated and Tickets sent successful"
+  }
+
 ```
 
 
