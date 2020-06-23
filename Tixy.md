@@ -238,7 +238,9 @@ Endpoint for Tixy
     "logo":"logo",
     "venue":"venue",
     "end_date": "end_date",
-    "start_date": "start_date"
+    "start_date": "start_date",
+    "start_time": "start_time",
+    "end_time":"end_time"
 }
 ```
 
@@ -531,6 +533,8 @@ Endpoint for Tixy
   "event_name":"event_name",
   "start_date":"start_date",
   "end_date":"end_date",
+  "start_time":"start_time",
+  "end_time":"end_time",
   "venue ":"venue",
   "city":"city",
   "address": "address",
